@@ -50,11 +50,11 @@
         iodim_howmany(2)%os=(sp%zen(1)-sp%zst(1)+1)
         fwd_guruplan_z=fftw_plan_guru_dft(1,iodim,                      &
      &    2,iodim_howmany,cz1,cz1,                                      &
-     &    FFTW_FORWARD,FFTW_ESTIMATE)
+     &    FFTW_FORWARD,FFTW_MEASURE)
         iodim(1)%n=nzm
         bwd_guruplan_z=fftw_plan_guru_dft(1,iodim,                      &
      &    2,iodim_howmany,cz1,cz1,                                      &
-     &    FFTW_BACKWARD,FFTW_ESTIMATE)
+     &    FFTW_BACKWARD,FFTW_MEASURE)
 
         if (.not.c_associated(bwd_guruplan_z)) then
           if (ismaster) print*,'Failed to create guru plan. You should'
@@ -76,7 +76,7 @@
      &    *(sp%yen(2)-sp%yst(2)+1)
         fwd_guruplan_y=fftw_plan_guru_dft_r2c(1,iodim,                  &
      &    2,iodim_howmany,ry1,cy1,                                      &
-     &    FFTW_ESTIMATE)
+     &    FFTW_MEASURE)
 
         iodim(1)%n=nym
         iodim(1)%is=sp%yen(1)-sp%yst(1)+1
@@ -91,7 +91,7 @@
      &    *(ph%yen(2)-ph%yst(2)+1)
         bwd_guruplan_y=fftw_plan_guru_dft_c2r(1,iodim,                  &
      &    2,iodim_howmany,cy1,ry1,                                      &
-     &    FFTW_ESTIMATE)
+     &    FFTW_MEASURE)
         planned=.true.
       endif
 
@@ -127,11 +127,11 @@
 
          call zgttrf(nxm, amph(2), acphT, apph(1), appph, phpiv, info)
 
-         if (info.gt.0) then
-           print*,'Singular value found in LAPACK routine zgttrf: info=',info
-           print*,'Please try to adjust either NX or STR3 in bou.in'
-           call MPI_Abort(MPI_COMM_WORLD,1,ierr)
-         endif
+!         if (info.gt.0) then
+!           print*,'Singular value found in LAPACK routine zgttrf: info=',info
+!           print*,'Please try to adjust either NX or STR3 in bou.in'
+!           call MPI_Abort(MPI_COMM_WORLD,1,ierr)
+!         endif
 
          call zgttrs('N',nxm,1,amph(2),acphT,apph(1),appph,phpiv,      &
                        dphc(1,j,i), nxm, info)
