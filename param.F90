@@ -89,17 +89,23 @@
         real,allocatable,dimension(:,:,:) :: rux,ruy,ruz,rutemp
         real,allocatable,dimension(:,:,:) :: dph,qcap,dq,hro,dphhalo
       end module local_arrays
-
 !===============================================================
+!! Copied from earlier version on 31/12/2019 by Vanshu [Modification #2]
+
       module stat_arrays
        implicit none
-       real,allocatable, dimension(:) :: vz_me,vz_rms 
-       real,allocatable, dimension(:) :: vy_me,vx_me,vy_rms,vx_rms 
-       real,allocatable, dimension(:) :: temp_me,temp_rms 
-       real, allocatable,dimension(:) :: disste,dissth,tempvx_me
+       real,allocatable, dimension(:) :: vx_m1,vy_m1,vz_m1
+       real,allocatable, dimension(:) :: vx_m2,vy_m2,vz_m2
+       real,allocatable, dimension(:) :: vx_m3,vy_m3,vz_m3
+       real,allocatable, dimension(:) :: vx_m4,vy_m4,vz_m4
+       real,allocatable, dimension(:) :: temp_m1,temp_m2,temp_m3,temp_m4 
+       real, allocatable,dimension(:) :: disste,dissth,tempvx_m1
        integer :: nstatsamples
+       real    :: tstat
       end module stat_arrays
-!=====================================================       
+
+!! End [Modification #2]   
+!=====================================================    
       module stat3_param
         implicit none
         integer :: kslab(1:9)

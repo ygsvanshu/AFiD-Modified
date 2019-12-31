@@ -57,17 +57,29 @@
       call DestroyReal2DArray(tempbp)
       call DestroyReal2DArray(temptp)
 
-      call DestroyReal1DArray(vx_me)
-      call DestroyReal1DArray(vy_me)
-      call DestroyReal1DArray(vz_me)
+!! Copied from earlier version on 31/12/2019 by Vanshu [Modification #2]
 
-      call DestroyReal1DArray(vx_rms)
-      call DestroyReal1DArray(vy_rms)
-      call DestroyReal1DArray(vz_rms)
+      call DestroyReal1DArray(vx_m1)
+      call DestroyReal1DArray(vy_m1)
+      call DestroyReal1DArray(vz_m1)
+	  call DestroyReal1DArray(temp_m1)
 
-      call DestroyReal1DArray(temp_me)
-      call DestroyReal1DArray(temp_rms)
-      call DestroyReal1DArray(tempvx_me)
+      call DestroyReal1DArray(vx_m2)
+      call DestroyReal1DArray(vy_m2)
+      call DestroyReal1DArray(vz_m2)
+      call DestroyReal1DArray(temp_m2)
+
+      call DestroyReal1DArray(vx_m3)
+      call DestroyReal1DArray(vy_m3)
+      call DestroyReal1DArray(vz_m3)
+      call DestroyReal1DArray(temp_m3)
+
+      call DestroyReal1DArray(vx_m4)
+      call DestroyReal1DArray(vy_m4)
+      call DestroyReal1DArray(vz_m4)
+      call DestroyReal1DArray(temp_m4)
+
+!! End [Modification #2]
 
       call DestroyReal3DArray(vx)
       call DestroyReal3DArray(vy)

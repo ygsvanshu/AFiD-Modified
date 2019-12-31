@@ -70,24 +70,39 @@
 ! Arrays for statistics    
 !-------------------------------------------------
 
+!! Copied from earlier version on 31/12/2019 by Vanshu [Modification #2]
+
       if (statcal) then
-       call AllocateReal1DArray(vx_me,1,nxm)
-       call AllocateReal1DArray(vy_me,1,nxm)
-       call AllocateReal1DArray(vz_me,1,nxm)
+       call AllocateReal1DArray(vx_m1,1,nxm)
+       call AllocateReal1DArray(vy_m1,1,nxm)
+       call AllocateReal1DArray(vz_m1,1,nxm)
  
-       call AllocateReal1DArray(vx_rms,1,nxm)
-       call AllocateReal1DArray(vy_rms,1,nxm)
-       call AllocateReal1DArray(vz_rms,1,nxm)
+       call AllocateReal1DArray(vx_m2,1,nxm)
+       call AllocateReal1DArray(vy_m2,1,nxm)
+       call AllocateReal1DArray(vz_m2,1,nxm)
+
+       call AllocateReal1DArray(vx_m3,1,nxm)
+       call AllocateReal1DArray(vy_m3,1,nxm)
+       call AllocateReal1DArray(vz_m3,1,nxm)
+
+       call AllocateReal1DArray(vx_m4,1,nxm)
+       call AllocateReal1DArray(vy_m4,1,nxm)
+       call AllocateReal1DArray(vz_m4,1,nxm)
  
-       call AllocateReal1DArray(temp_me,1,nxm)
-       call AllocateReal1DArray(temp_rms,1,nxm)
-       call AllocateReal1DArray(tempvx_me,1,nxm)
+       call AllocateReal1DArray(temp_m1,1,nxm)
+       call AllocateReal1DArray(temp_m2,1,nxm)
+       call AllocateReal1DArray(temp_m3,1,nxm)
+       call AllocateReal1DArray(temp_m4,1,nxm)
+       
+       call AllocateReal1DArray(tempvx_m1,1,nxm)
 
        if (disscal) then
         call AllocateReal1DArray(disste,1,nxm)
         call AllocateReal1DArray(dissth,1,nxm)
        end if
       end if
+
+!! End [Modification #2]
 
       !-------------------------------------------------
       ! Arrays with ghost cells
