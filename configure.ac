@@ -38,7 +38,8 @@ dummy_FCFLAGS=$FCFLAGS
 #set default compiler optimization
 if test "x$FCFLAGS_isset" = "xno"; then
 #if test 0;then
-  FCFLAGS="-O2"
+  #FCFLAGS="-O2"
+  FCFLAGS="-lfftw3 -mkl -O3 -xMIC-AVX512"
   AC_MSG_CHECKING([for default optimization -O2])
   AC_LINK_IFELSE(
   [AC_LANG_SOURCE([[

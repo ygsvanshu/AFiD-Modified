@@ -17,6 +17,10 @@
         integer   :: starea,tsta
         real      :: dtmin,dtmax,limitCFL,limitVel
         integer   :: nson,idtv
+
+        !! Modified on 30/12/2019 by Vanshu [Modification #1]
+        real      :: savesnap
+        !! End [Modification #1]
 !=================================================
 !       end of input file
 !=================================================

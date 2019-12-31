@@ -276,6 +276,16 @@
 
       endif
 
+      !! Modified on 30/12/2019 by Vanshu [Modification #1]
+
+      if (savesnap.ne.0) then
+        if (mod(time,savesnap).lt.dt) then
+          call WriteFlowFieldSnapshot
+        endif
+      endif
+
+      !! End [Modification #1]
+
       enddo !EP main loop
 
       call QuitRoutine(tin,.true.,errorcode)
